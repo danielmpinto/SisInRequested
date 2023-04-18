@@ -4,3 +4,4 @@ pandas==1.2.2
 pytrends@git+https://github.com/danielmpinto/pytrends
 dash_bootstrap_components
 networkx==2.2
+numpy==1.20.1
