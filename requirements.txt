@@ -3,3 +3,4 @@ plotly==5.13.1
 pandas==1.2.2
 pytrends@git+https://github.com/danielmpinto/pytrends
 dash_bootstrap_components
+networkx==2.2
