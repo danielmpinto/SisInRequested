@@ -1,0 +1,12 @@
+dash==2.8.1
+plotly==5.13.1
+pandas==1.2.2
+pytrends@git+https://github.com/danielmpinto/pytrends
+dash_bootstrap_components
+networkx==2.2
+numpy==1.20.1
+scipy==1.7.3
+scikit-learn==0.24.2
+xlrd==1.2.0
+matplotlib==3.0.3
+openpyxl==2.6.1
