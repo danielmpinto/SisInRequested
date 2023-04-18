@@ -6,3 +6,4 @@ dash_bootstrap_components
 networkx==2.2
 numpy==1.20.1
 scipy==1.7.3
+scikit-learn==0.24.2
