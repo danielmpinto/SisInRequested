@@ -14,9 +14,6 @@ import plotly.graph_objects as go
 import threading
 import time
 
-global fig1
-
-
 
 #++++++++++++++++++++++ lista com palavra-chave +++++++++++++++++++++++++++
 kw_list=['febre','tosse','garganta','hospital']
@@ -32,6 +29,7 @@ leg=[kw_list[0],kw_list[1],kw_list[2],kw_list[3]]
 
 
 def atualizaResultado():
+  
   while True:
     dash.register_page(__name__, name='Gripe Geral')
     #++++++++++++++++++++++ conexao com o servidor ++++++++++++++++++++++++++++
@@ -159,13 +157,8 @@ def atualizaResultado():
     df['febre_alta_Norm']=teste['febre']
 
     df.to_excel('gripe.xlsx')
-    time.sleep(100)
-
     
-# executa thread
-threading.Thread(target=atualizaResultado).start()
-    ##########################################################################
-layout = html.Div(children=[
+    layout = html.Div(children=[
         dbc.Container(dbc.Alert(html.H5("Situação de Gripe (últimos 7 dias)", className="alert-heading"), color="success"),
         className="m-2"),
          dcc.Graph(id='graph1',style={'width': '40vh', 'height': '30vh','display':'inline-block'},
@@ -196,6 +189,14 @@ layout = html.Div(children=[
         dcc.Graph(id='graph12',style={'width': '40vh', 'height': '30vh','display':'inline-block'},
             figure=fig12),                 
     ])        
+    
+    time.sleep(100)
+    
+    
+# executa thread
+threading.Thread(target=atualizaResultado).start()
+    ##########################################################################
+
     
     
 
