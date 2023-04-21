@@ -155,10 +155,10 @@ def atualizaResultado():
     df['febre_alta_Norm']=teste['febre']
 
     df.to_excel('gripe.xlsx')
-
+    time.sleep(100)
 
     ##########################################################################
-    layout = html.Div(children=[
+layout = html.Div(children=[
         dbc.Container(dbc.Alert(html.H5("Situação de Gripe (últimos 7 dias)", className="alert-heading"), color="success"),
         className="m-2"),
          dcc.Graph(id='graph1',style={'width': '40vh', 'height': '30vh','display':'inline-block'},
@@ -188,7 +188,7 @@ def atualizaResultado():
             figure=fig11),   
         dcc.Graph(id='graph12',style={'width': '40vh', 'height': '30vh','display':'inline-block'},
             figure=fig12),                 
-    ])    
-    time.sleep(10)
+    ])        
+    
     
 threading.Thread(target=atualizaResultado).start()
