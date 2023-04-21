@@ -157,6 +157,9 @@ def atualizaResultado():
     df.to_excel('gripe.xlsx')
     time.sleep(100)
 
+    
+# executa thread
+threading.Thread(target=atualizaResultado).start()
     ##########################################################################
 layout = html.Div(children=[
         dbc.Container(dbc.Alert(html.H5("Situação de Gripe (últimos 7 dias)", className="alert-heading"), color="success"),
@@ -191,4 +194,4 @@ layout = html.Div(children=[
     ])        
     
     
-threading.Thread(target=atualizaResultado).start()
+
