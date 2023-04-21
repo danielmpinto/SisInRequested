@@ -14,11 +14,6 @@ import plotly.graph_objects as go
 import threading
 import time
 
-dash.register_page(__name__, name='Gripe Geral')
-
-
-#++++++++++++++++++++++ conexao com o servidor ++++++++++++++++++++++++++++
-pytrends=TrendReq(hl='en-US', tz=360)
 
 
 
@@ -33,21 +28,14 @@ leg=[kw_list[0],kw_list[1],kw_list[2],kw_list[3]]
 
 ## deixa figuras globais
 
-global fig1
-global fig2
-global fig3
-global fig4
-global fig5
-global fig6
-global fig7
-global fig8
-global fig9
-global fig10
-global fig11
-global fig12
+
 
 def atualizaResultado():
   while True:
+    dash.register_page(__name__, name='Gripe Geral')
+    #++++++++++++++++++++++ conexao com o servidor ++++++++++++++++++++++++++++
+    pytrends=TrendReq(hl='en-US', tz=360)
+
     pytrends.build_payload(kw_list, timeframe='now 7-d',geo='BR',gprop='')
     #pytrends.build_payload(kw_list,  
     #                      timeframe='2023-01-01 2023-04-04',
@@ -68,8 +56,8 @@ def atualizaResultado():
     difer3=np.diff(peaks3)
     difer4=np.diff(peaks4)
 
-    fig1 = px.line(teste,x='dias',y='febre')
-    fig1.add_trace(go.Scatter(x=teste.index[peaks1],
+    global fig1 = px.line(teste,x='dias',y='febre')
+    global fig1.add_trace(go.Scatter(x=teste.index[peaks1],
                               y=teste[kw_list[0]].values[peaks1],
                               mode='markers'))
     fig1.add_trace(go.Scatter(x=teste.index,
