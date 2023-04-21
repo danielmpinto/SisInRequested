@@ -14,6 +14,7 @@ import plotly.graph_objects as go
 import threading
 import time
 
+global fig1
 
 
 
@@ -56,8 +57,8 @@ def atualizaResultado():
     difer3=np.diff(peaks3)
     difer4=np.diff(peaks4)
 
-    global fig1 = px.line(teste,x='dias',y='febre')
-    global fig1.add_trace(go.Scatter(x=teste.index[peaks1],
+    fig1 = px.line(teste,x='dias',y='febre')
+    fig1.add_trace(go.Scatter(x=teste.index[peaks1],
                               y=teste[kw_list[0]].values[peaks1],
                               mode='markers'))
     fig1.add_trace(go.Scatter(x=teste.index,
