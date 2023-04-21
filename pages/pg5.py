@@ -31,6 +31,21 @@ leg=[kw_list[0],kw_list[1],kw_list[2],kw_list[3]]
 
 ## thread infinita
 
+## deixa figuras globais
+
+global fig1
+global fig2
+global fig3
+global fig4
+global fig5
+global fig6
+global fig7
+global fig8
+global fig9
+global fig10
+global fig11
+global fig12
+
 def atualizaResultado():
   while True:
     pytrends.build_payload(kw_list, timeframe='now 7-d',geo='BR',gprop='')
