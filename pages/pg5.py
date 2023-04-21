@@ -190,7 +190,7 @@ def atualizaResultado():
             figure=fig12),                 
     ])        
     
-    time.sleep(100)
+    time.sleep(10)
     
     
 # executa thread
